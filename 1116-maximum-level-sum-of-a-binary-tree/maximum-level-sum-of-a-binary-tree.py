@@ -26,7 +26,6 @@ class Solution:
                     queue.append(node.right)
 
             if max_sum_level < level_sum:
-                max_sum_level = level_sum
-                final_level = level
+                max_sum_level, final_level = level_sum, level
             level = level + 1
         return final_level
