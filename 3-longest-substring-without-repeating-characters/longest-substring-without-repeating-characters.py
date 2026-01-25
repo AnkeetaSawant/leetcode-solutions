@@ -4,8 +4,6 @@ class Solution:
         start , end = 0 , 0
         n = len(s)
         visitedDict = {}
-        #if s == "":
-        #    return 0
         
         while end < n:
             if s[end] in visitedDict and visitedDict[s[end]] >= start:
