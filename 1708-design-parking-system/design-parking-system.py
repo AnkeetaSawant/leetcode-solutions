@@ -8,20 +8,15 @@ class CarType(Enum):
 class ParkingSystem:
 
     def __init__(self, big: int, medium: int, small: int):
-        self.big = big
-        self.medium = medium
-        self.small = small
+        self.slots = {
+            CarType.big.value: big,
+            CarType.medium.value: medium,
+            CarType.small.value: small
+        }
 
     def addCar(self, carType: int) -> bool:
-        print(carType, CarType.big, self.big)
-        if carType == CarType.big.value and self.big > 0:
-            self.big -= 1
-            return True
-        elif carType == CarType.small.value and self.small > 0:
-            self.small -= 1
-            return True
-        elif carType == CarType.medium.value and self.medium > 0:
-            self.medium -= 1
+        if self.slots[carType] > 0:
+            self.slots[carType] -= 1
             return True
         return False
 
