@@ -11,3 +11,4 @@ class Solution:
             if freqCount[freq_num[num]] == 1:
                 return num
         return -1
+        
